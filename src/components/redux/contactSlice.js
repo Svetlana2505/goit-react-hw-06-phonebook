@@ -9,13 +9,7 @@ const contactSlice = createSlice({
   initialState,
   reducers: {
     formSubmitHandler: (state, { payload }) => {
-      const checkContacts = state.contact.some(
-        contact => contact.name === payload.name
-      );
-
-      checkContacts
-        ? alert(`${payload.name} is already in contacts`)
-        : state.contact.push(payload);
+      state.contact.push(payload);
     },
 
     deleteContact: (state, { payload }) => {
